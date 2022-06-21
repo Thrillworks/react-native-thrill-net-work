@@ -16,4 +16,15 @@ RCT_REMAP_METHOD(multiply,
   resolve(result);
 }
 
+- (NSURLSession *)session {
+    if(!_session) {
+        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        _session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:nil];
+    }
+}
+
+- (void) requestURL:(URL *)url method: (NSString *)method headers: (NSDictionary *)headers parameters: (NSDictionary *)parameters {
+    
+}
+
 @end
